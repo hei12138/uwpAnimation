@@ -1,0 +1,56 @@
+﻿<Page
+    x:Class="UsingXaml.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UsingXaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <BitmapImage x:Key="key1" UriSource="Resources/teemo_1.png"/>
+        <BitmapImage x:Key="key2" UriSource="Resources/teemo_2.png"/>
+        <BitmapImage x:Key="key3" UriSource="Resources/teemo_3.png"/>
+        <BitmapImage x:Key="key4" UriSource="Resources/teemo_4.png"/>
+        <BitmapImage x:Key="key5" UriSource="Resources/teemo_5.png"/>
+        <BitmapImage x:Key="key6" UriSource="Resources/teemo_6.png"/>
+        <BitmapImage x:Key="key7" UriSource="Resources/teemo_7.png"/>
+        <BitmapImage x:Key="key8" UriSource="Resources/teemo_8.png"/>
+        
+        <Storyboard x:Key="std" x:Name="std" RepeatBehavior="Forever" AutoReverse="True">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="Source">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="Resources/teemo_1.png" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="Resources/teemo_2.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="Resources/teemo_3.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="Resources/teemo_4.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="Resources/teemo_5.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="Resources/teemo_6.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="Resources/teemo_7.png"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="Resources/teemo_8.png"/>
+                                                                 
+            </ObjectAnimationUsingKeyFrames>
+            
+        </Storyboard>
+        <Storyboard x:Key="std2" x:Name="std2" RepeatBehavior="Forever" AutoReverse="True">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="image2" Storyboard.TargetProperty="Source">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{StaticResource key1}" />
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{StaticResource key2}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{StaticResource key3}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{StaticResource key4}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{StaticResource key5}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{StaticResource key6}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{StaticResource key7}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="{StaticResource key8}"/>
+                                                                 
+            </ObjectAnimationUsingKeyFrames>
+
+        </Storyboard>
+    </Page.Resources>
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button Content="测试UsingXaml" Click="Button_Click"/>
+        <Image Height="40" Width="40" x:Name="image" Source="Resources/teemo_1.png"/>
+        <Button Content="卡住UI" Click="Button_Click_1"/>
+        <Button Content="测试UsingXaml key=bitmap" Click="Button_Click_2"/>
+        <Image Height="40" Width="40" x:Name="image2" Source="Resources/teemo_1.png"/>
+        <Button Content="停止动画" Click="Button_Click_3"/>
+    </StackPanel>
+</Page>
